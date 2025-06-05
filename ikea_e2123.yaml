@@ -357,9 +357,9 @@ variables:
       button_dots2_double: [dots_2_double_press]
     zha:
       # source: https://github.com/zigpy/zha-device-handlers/blob/dev/zhaquirks/ikea/symfonisk2.py
-      button_up_short: [move_on_off_8_1_0, move_with_on_off_8_1_0]
+      button_up_short: [move_on_off_8_1_0, move_with_on_off_MoveMode.Up_8_1_0]
       button_up_long: [move_8_1]
-      button_down_short: [move_on_off_8_1_1, move_with_on_off_8_1_1]
+      button_down_short: [move_on_off_8_1_1, move_with_on_off_MoveMode.Down_8_1_1]
       button_down_long: [move_8_1_1]
       button_right_short: [step_8_1_0]
       button_left_short: [step_8_1_1]
@@ -541,15 +541,6 @@ triggers:
       cluster_id: 8
       args: [0]
   - trigger: event
-    id: zha-button-up-short
-    event_type: zha_event
-    event_data:
-      device_id: !input controller_device
-      command: move_with_on_off
-      endpoint_id: 1
-      cluster_id: 8
-      args: [0]
-  - trigger: event
     id: zha-button-up-long
     event_type: zha_event
     event_data:
@@ -559,15 +550,6 @@ triggers:
       cluster_id: 8
       args: [0]
   # Down Button
-  - trigger: event
-    id: zha-button-down-short
-    event_type: zha_event
-    event_data:
-      device_id: !input controller_device
-      command: move_with_on_off
-      endpoint_id: 1
-      cluster_id: 8
-      args: [1]
   - trigger: event
     id: zha-button-down-short
     event_type: zha_event
